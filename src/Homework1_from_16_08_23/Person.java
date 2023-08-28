@@ -29,12 +29,11 @@ public class Person {
         this.height = height;
         this.weight = weight;
         this.money = money;
-
     }
 
     public void infoOfPerson() {
         System.out.println("Имя: " + name + ", Возраст: " + age + " лет" + ", Рост: " + height + " см" + ", Вес: " + weight + " кг");
-        System.out.println("Зарплата: " + money + "$");
+        System.out.println("Ежемесячная сумма: " + money + "$");
     }
     public String goToWent() {
         if (age < 18 || age > 70) {
@@ -66,5 +65,10 @@ public class Person {
 
     public void setMoney(int money) {
         this.money = money;
+    }
+
+    public void die(){
+        System.out.println("Человек погиб");
+
     }
 }
