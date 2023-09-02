@@ -1,5 +1,7 @@
 package Homework2_from_21_08_23;
 
+import java.util.Objects;
+
 public class PensionFund {
 //    У вас есть класс Person.
 //1) Сделать его правильным - создать геттеры и сеттеры, проверить, что он соответствует тем правилам,
@@ -29,10 +31,7 @@ public class PensionFund {
         this.gos = gos;
         this.dateOfCreation = dateOfCreation;
         this.numOfFundParticipants = numOfFundParticipants;
-
-
     }
-
     public String getPensFundName() {
         return pensFundName;
     }
@@ -58,15 +57,44 @@ public class PensionFund {
     }
 
     public void infoState() {
-
+        System.out.println("Наименование фонда: " + pensFundName);
+        System.out.println("Дата создания: " + dateOfCreation);
         if (gos) {
             System.out.println("Государственный фонд: " + numOfFundParticipants / 1000 + " тысяч человек используют фонд");
         } else {
             System.out.println("Негосударственный фонд: " + numOfFundParticipants + " человек используют фонд");
-
         }
+    }
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
 
+        PensionFund that = (PensionFund) o;
 
+        if (gos != that.gos) return false;
+        if (numOfFundParticipants != that.numOfFundParticipants) return false;
+        if (!Objects.equals(pensFundName, that.pensFundName)) return false;
+        return Objects.equals(dateOfCreation, that.dateOfCreation);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = pensFundName != null ? pensFundName.hashCode() : 0;
+        result = 31 * result + (gos ? 1 : 0);
+        result = 31 * result + (dateOfCreation != null ? dateOfCreation.hashCode() : 0);
+        result = 31 * result + numOfFundParticipants;
+        return result;
+    }
+
+    @Override
+    public String toString() {
+        return "PensionFund{" +
+                "pensFundName='" + pensFundName + '\'' +
+                ", gos=" + gos +
+                ", dateOfCreation='" + dateOfCreation + '\'' +
+                ", numOfFundParticipants=" + numOfFundParticipants +
+                '}';
     }
 }
 

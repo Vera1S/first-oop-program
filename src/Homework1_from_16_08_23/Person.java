@@ -1,6 +1,8 @@
 package Homework1_from_16_08_23;
 
-public class Person {
+import java.util.Objects;
+
+public abstract class Person  {
     //    Создать класс Person.
 //2) В нем добавить такие поля:
 //а) Имя человека (выбрать самостоятельно тип данных)
@@ -31,6 +33,10 @@ public class Person {
         this.money = money;
     }
 
+    public Person() {
+
+    }
+
     public void infoOfPerson() {
         System.out.println("Имя: " + name + ", Возраст: " + age + " лет" + ", Рост: " + height + " см" + ", Вес: " + weight + " кг");
         System.out.println("Ежемесячная сумма: " + money + "$");
@@ -42,7 +48,6 @@ public class Person {
             return "Работаю";
         }
     }
-
     public String getName() {
         return name;
     }
@@ -69,6 +74,46 @@ public class Person {
 
     public void die(){
         System.out.println("Человек погиб");
+           }
+           public abstract void die(int years);
 
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Person person = (Person) o;
+
+        if (age != person.age) return false;
+        if (Double.compare(person.height, height) != 0) return false;
+        if (Double.compare(person.weight, weight) != 0) return false;
+        if (money != person.money) return false;
+        return Objects.equals(name, person.name);
+    }
+
+    @Override
+    public int hashCode() {
+        int result;
+        long temp;
+        result = name != null ? name.hashCode() : 0;
+        result = 31 * result + age;
+        temp = Double.doubleToLongBits(height);
+        result = 31 * result + (int) (temp ^ (temp >>> 32));
+        temp = Double.doubleToLongBits(weight);
+        result = 31 * result + (int) (temp ^ (temp >>> 32));
+        result = 31 * result + money;
+        return result;
+    }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "name='" + name + '\'' +
+                ", age=" + age +
+                ", height=" + height +
+                ", weight=" + weight +
+                ", money=" + money +
+                '}';
     }
 }

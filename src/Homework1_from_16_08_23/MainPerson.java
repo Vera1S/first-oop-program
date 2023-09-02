@@ -6,16 +6,26 @@ import Homework3_from_23_08_23.Worker;
 
 public class MainPerson {
     public static void main(String[] args) {
+//        задание от 28.08.2023г
+// 1) Создайте метод public void die(int years) в классе Person, сделайте его абстрактным.
+// Этот метод будет отличаться от обычного die() тем, что человек будет умирать не сразу, а через некоторое количество
+// лет (которые и будут передаваться в параметре метода). Реализуйте этот метод для  Pensioner и Worker таким образом:
+//а) для Worker просто вывести на экран "Этот человек не доживет до пенсии и умрет через " + years + "лет"
+//б) Для Pensioner пишем на экран "Этот пенсионер умрет через" + years + "лет"
+//2) Все классы, которые созданы, снабжаем собственными реализациями методов equals, hashCode и toString
+//3) Добавить для класса Worker несколько конструкторов (перегрузка)
 
-        Person person1 = new Person("Vera", 17, 170, 65, 800);
-        Person person2 = new Person("Nikolai", 42, 180, 80.5, 2500);
-        Person person3 = new Person("Svetlana", 72, 165, 65.8, 6500);
+        Person person1 = new Worker("Vera", 17, 170, 65, 800);
+        Person person2 = new Worker("Nikolai", 42, 180, 80.5, 2500);
+        Person person3 = new Pensioner("Svetlana", 72, 165, 65.8, 6500, 365);
 
         PensionFund stateFund = new PensionFund("Ромашка", "2000 years", true, 3000);
         PensionFund noStateFund = new PensionFund("Ромашка", "2015 год", false, 300);
 
-        Pensioner pensioner = new Pensioner("Anton", 55, 175, 75, 150000, 525);
-        Worker worker = new Worker("Katerina", 35, 175, 65, 4500);
+        Pensioner pensioner = new Pensioner("Anton", 55, 175, 75, 150000, 365);
+        Worker worker1 = new Worker("Katerina", 35, 175, 65, 4500);
+        Worker worker2 = new Worker("Konstantin", 37, 176, 70, 4500);
+        Worker worker3 = new Worker("Maria", 40, 173, 68, 4500);
 
         person1.infoOfPerson();
         person2.infoOfPerson();
@@ -32,11 +42,13 @@ public class MainPerson {
         System.out.println(noStateFund.getNumOfFundParticipants());
         stateFund.infoState();
         noStateFund.infoState();
+//        stateFund.gos = true;
+//        stateFund.gos = false;
         System.out.println();
         pensioner.getPension();
         pensioner.die();
-        worker.die();
-
-
+        pensioner.die(50);
+        worker1.die();
+        worker2.die(55);
     }
 }

@@ -34,6 +34,33 @@ public class Pensioner extends Person {
     public void die() {
         super.die();
         System.out.println("Этот пенсионер умер, он заработал: " + (getAge() - 50) * pension);
+    }
 
+    @Override
+    public void die(int years) {
+        System.out.println("Этот человек не доживет до пенсии и умрет через " + years + "лет");
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Pensioner pensioner = (Pensioner) o;
+
+        return Double.compare(pensioner.pension, pension) == 0;
+    }
+
+    @Override
+    public int hashCode() {
+        long temp = Double.doubleToLongBits(pension);
+        return (int) (temp ^ (temp >>> 32));
+    }
+
+    @Override
+    public String toString() {
+        return "Pensioner{" +
+                "pension=" + pension +
+                '}';
     }
 }
