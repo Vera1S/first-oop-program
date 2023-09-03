@@ -1,8 +1,11 @@
 package Homework3_from_23_08_23;
 
 import Homework1_from_16_08_23.Person;
+import Homework5_from_30_08_23.AbleToCalculatePension;
+import Homework5_from_30_08_23.CalculatorUtils;
 
-public class Worker extends Person {
+public class Worker extends Person implements AbleToCalculatePension {
+
 
     private int minSalary;
     private int maxSalary;
@@ -72,5 +75,11 @@ public class Worker extends Person {
                 "minSalary=" + minSalary +
                 ", maxSalary=" + maxSalary +
                 '}';
+    }
+
+    @Override
+    public double calculatePension() {
+        return CalculatorUtils.calculateAverage(minSalary, maxSalary) * 0.25;
+
     }
 }

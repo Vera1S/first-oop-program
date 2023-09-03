@@ -3,6 +3,7 @@ package Homework1_from_16_08_23;
 import java.util.Objects;
 
 public abstract class Person  {
+    //    Задача № 1 от 16.08.2023г
     //    Создать класс Person.
 //2) В нем добавить такие поля:
 //а) Имя человека (выбрать самостоятельно тип данных)

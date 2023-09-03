@@ -3,7 +3,8 @@ package Homework3_from_23_08_23;
 import Homework1_from_16_08_23.Person;
 
 public class Pensioner extends Person {
-//1 уровень сложности: У вас есть класс Person.
+//Задание № 3 от 23.08.2023г
+// У вас есть класс Person.
 //
 //1) Создать классы Pensioner и Worker. Унаследовать их от класса Person.
 // В класс Pensioner добавить дробное поле pension (пенсия), в класс Worker
