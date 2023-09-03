@@ -80,6 +80,9 @@ public class Worker extends Person implements AbleToCalculatePension {
     @Override
     public double calculatePension() {
         return CalculatorUtils.calculateAverage(minSalary, maxSalary) * 0.25;
-
     }
+//   double averageSalary = CalculatorUtils.calculateAverage(maxSalary, minSalary);
+//       double pension = 0.25 * averageSalary;
+//        return pension;
+
 }

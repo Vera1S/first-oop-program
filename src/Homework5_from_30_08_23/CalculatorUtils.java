@@ -25,4 +25,5 @@ public class CalculatorUtils {
 
         return Math.round((double) (first + second + third) / 3 * 100 / 100);
     }
+
 }
