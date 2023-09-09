@@ -3,6 +3,9 @@ package Homework1_from_16_08_23;
 import Homework2_from_21_08_23.PensionFund;
 import Homework3_from_23_08_23.Pensioner;
 import Homework3_from_23_08_23.Worker;
+import Homework5_from_30_08_23.AbleToCalculatePension;
+import Homework5_from_30_08_23.CalculatorUtils;
+import Homework7_from_06_09_23.GenderTypes;
 
 public class MainPerson {
     public static void main(String[] args) {
@@ -50,5 +53,19 @@ public class MainPerson {
         pensioner.die(50);
         worker1.die();
         worker2.die(55);
+        System.out.println("-------------Пол" + worker1 + GenderTypes.FEMALE);
+        System.out.println("-------------Пол" + worker2 + GenderTypes.MALE.name());
+        worker1.setIsGender(GenderTypes.FEMALE);
+        worker2.setIsGender(GenderTypes.MALE);
+
+        GenderTypes worker1Gender = worker1.getIsGender();
+        GenderTypes worker2Gender = worker2.getIsGender();
+
+        System.out.println(worker1Gender);
+        System.out.println(worker2Gender);
+
+        CalculatorUtils.calculateAvege(5, 5.0);
+
+
     }
 }

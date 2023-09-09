@@ -23,7 +23,16 @@ public class Worker extends Person implements AbleToCalculatePension {
         super();
         this.maxSalary = (int) maxSalary;
     }
+    @Override
+    public double calculatePension() {
+        return CalculatorUtils.calculateAverage(minSalary, maxSalary) * 0.25;
+    }
 
+//    public double setResult(double result) {
+//        double averageSalary = CalculatorUtils.calculateAverage(maxSalary, minSalary);
+//        return result = 0.25 * averageSalary;
+//    }
+//
     public int getMinSalary(){
         return minSalary;
     }
@@ -77,12 +86,6 @@ public class Worker extends Person implements AbleToCalculatePension {
                 '}';
     }
 
-    @Override
-    public double calculatePension() {
-        return CalculatorUtils.calculateAverage(minSalary, maxSalary) * 0.25;
-    }
-//   double averageSalary = CalculatorUtils.calculateAverage(maxSalary, minSalary);
-//       double pension = 0.25 * averageSalary;
-//        return pension;
+
 
 }

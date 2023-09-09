@@ -1,5 +1,7 @@
 package Homework1_from_16_08_23;
 
+import Homework7_from_06_09_23.GenderTypes;
+
 import java.util.Objects;
 
 public abstract class Person  {
@@ -24,6 +26,7 @@ public abstract class Person  {
     private double height;
     private double weight;
     private int money;
+    private GenderTypes isGender;
 
     //Конструктор с 4 аргументами
     public Person(String name, int age, double height, double weight, int money) {
@@ -73,11 +76,18 @@ public abstract class Person  {
         this.money = money;
     }
 
+    public GenderTypes getIsGender() {
+        return isGender;
+    }
+
+    public void setIsGender(GenderTypes isGender) {
+        this.isGender = isGender;
+    }
+
     public void die(){
         System.out.println("Человек погиб");
            }
            public abstract void die(int years);
-
 
     @Override
     public boolean equals(Object o) {

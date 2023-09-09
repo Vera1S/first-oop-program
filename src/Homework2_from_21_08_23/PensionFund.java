@@ -1,5 +1,7 @@
 package Homework2_from_21_08_23;
 
+import Homework5_from_30_08_23.AbleToCalculatePension;
+
 import java.util.Objects;
 
 public class PensionFund {
@@ -33,6 +35,33 @@ public class PensionFund {
         this.dateOfCreation = dateOfCreation;
         this.numOfFundParticipants = numOfFundParticipants;
     }
+    public void infoState() {
+        System.out.println("Наименование фонда: " + pensFundName);
+        System.out.println("Дата создания: " + dateOfCreation);
+        if (gos) {
+            System.out.println("Государственный фонд: " + numOfFundParticipants / 1000 + " тысяч человек используют фонд");
+        } else {
+            System.out.println("Негосударственный фонд: " + numOfFundParticipants + " человек используют фонд");
+        }
+    }
+//    3) В классе пенсионный фонд реализуйте метод double calculatePensionFor. В него вы будете передавать
+// в качестве параметра объект, реализующий интерфейс  AbleToCalculatePension. (подсказка, метод будет
+// выглядеть вот так:
+//public double calculatePensionFor(AbleToCalculatePension obj)
+
+//4) Реализация метода будет такой: если фонд государственный - просто вызовите метод calculatePension()
+// на объекте (на obj), который передаете в параметрах метода и верните его результат.
+
+    //Если фонд не государственный, то результат всегда равен 0 (деньги из фонда украли)
+    public double calculatePensionFor(AbleToCalculatePension obj){
+        if (isGos()) {
+            // Государственный фонд, используем метод calculatePension() объекта
+            return obj.calculatePension();
+        } else {
+            System.out.println("Деньги из фонда украли");
+            return 0.0;
+        }
+    }
     public String getPensFundName() {
         return pensFundName;
     }
@@ -57,15 +86,7 @@ public class PensionFund {
         this.numOfFundParticipants = numOfFundParticipants;
     }
 
-    public void infoState() {
-        System.out.println("Наименование фонда: " + pensFundName);
-        System.out.println("Дата создания: " + dateOfCreation);
-        if (gos) {
-            System.out.println("Государственный фонд: " + numOfFundParticipants / 1000 + " тысяч человек используют фонд");
-        } else {
-            System.out.println("Негосударственный фонд: " + numOfFundParticipants + " человек используют фонд");
-        }
-    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
