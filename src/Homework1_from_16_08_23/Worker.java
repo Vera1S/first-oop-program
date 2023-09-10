@@ -24,11 +24,17 @@ public class Worker extends Person implements AbleToCalculatePension {
         return CalculatorUtils.calculateAverage(minSalary, maxSalary) * 0.25;
     }
 
-//    public double setResult(double result) {
-//        double averageSalary = CalculatorUtils.calculateAverage(maxSalary, minSalary);
-//        return result = 0.25 * averageSalary;
-//    }
-//
+    @Override
+    public double calculatePension(GenderTypes gender) {
+
+        if (gender == GenderTypes.FEMALE) {
+            return CalculatorUtils.calculateAverage(minSalary / 2, maxSalary * 2) * 0.25;
+        }else{
+
+            return CalculatorUtils.calculateAverage(minSalary, maxSalary) * 0.25;
+        }
+
+        }
     public int getMinSalary(){
         return minSalary;
     }

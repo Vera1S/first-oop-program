@@ -57,7 +57,7 @@ public class MainPerson {
         System.out.println(worker1Gender);
         System.out.println(worker2Gender);
 
-        CalculatorUtils.calculateAvege(5, 5.0);
+
 
 
     }

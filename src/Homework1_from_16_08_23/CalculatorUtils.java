@@ -18,22 +18,20 @@ public class CalculatorUtils {
 // значения - это и будет полученная пенсия.
 
     public static double calculateAverage(int first, int second) {
-        return Math.round((double) (first + second) / 2 * 100 / 100);
+        return  (first + second) / 2.0;
     }
 
     public static double calculateAverage(int first, int second, int third) {
 
-        return Math.round((double) (first + second + third) / 3 * 100 / 100);
+        return (first + second + third) / 3.0;
     }
 //У каждого Worker'а есть две переменных - максимальная и минимальная зарплата. Используйте метод из утилиты
 // CalculatorUtils, чтобы найти среднее из минимального значения зарплаты, поделенного на 2 и максимального,
 // умноженного на два. После этого возьмите 25% от получившегося значения - это и будет полученная пенсия.
 
 
-    public static int calculateAverage(int first, double second) {
-        return Math.round((int) (first + second) / 2 * 100 / 100);
-            }
-            public static long calculateAvege(int first, double second){
-        return Math.round((first + second) * 3 / 100 * 100);
-            }
+
+//            public static double calculateAvege(int first, double second){
+//        return (first + second) * 2;
+//            }
 }

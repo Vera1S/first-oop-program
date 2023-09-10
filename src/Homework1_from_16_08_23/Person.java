@@ -75,10 +75,12 @@ public abstract class Person  {
     }
 
     public GenderTypes getIsGender() {
+
         return isGender;
     }
 
     public void setIsGender(GenderTypes isGender) {
+
         this.isGender = isGender;
     }
 
