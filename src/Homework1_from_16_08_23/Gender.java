@@ -20,8 +20,8 @@ public class Gender {
 
 //Если фонд не государственный, то результат всегда равен 0 (деньги из фонда украли)
 
-//    public final static String FEMALE = "FEMALE";     //ctrl+shift+u - чтобы сделать буквы большими
-//
-//    public final static String MALE = "MALE";
+    public final static String FEMALE = "FEMALE";     //ctrl+shift+u - чтобы сделать буквы большими
+
+    public final static String MALE = "MALE";
     }
 
