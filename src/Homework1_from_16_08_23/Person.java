@@ -1,7 +1,5 @@
 package Homework1_from_16_08_23;
 
-import Homework7_from_06_09_23.GenderTypes;
-
 import java.util.Objects;
 
 public abstract class Person  {

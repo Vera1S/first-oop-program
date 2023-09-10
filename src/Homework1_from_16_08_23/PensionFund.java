@@ -1,6 +1,4 @@
-package Homework2_from_21_08_23;
-
-import Homework5_from_30_08_23.AbleToCalculatePension;
+package Homework1_from_16_08_23;
 
 import java.util.Objects;
 

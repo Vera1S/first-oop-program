@@ -1,8 +1,4 @@
-package Homework3_from_23_08_23;
-
-import Homework1_from_16_08_23.Person;
-import Homework5_from_30_08_23.AbleToCalculatePension;
-import Homework5_from_30_08_23.CalculatorUtils;
+package Homework1_from_16_08_23;
 
 public class Worker extends Person implements AbleToCalculatePension {
 

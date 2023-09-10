@@ -1,6 +1,4 @@
-package Homework3_from_23_08_23;
-
-import Homework1_from_16_08_23.Person;
+package Homework1_from_16_08_23;
 
 public class Pensioner extends Person {
 //Задание № 3 от 23.08.2023г

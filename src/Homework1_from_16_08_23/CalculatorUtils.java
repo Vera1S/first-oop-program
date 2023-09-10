@@ -1,4 +1,4 @@
-package Homework5_from_30_08_23;
+package Homework1_from_16_08_23;
 
 public class CalculatorUtils {
 //    Задача № 5 от 30.08.2023г

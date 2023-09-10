@@ -1,12 +1,5 @@
 package Homework1_from_16_08_23;
 
-import Homework2_from_21_08_23.PensionFund;
-import Homework3_from_23_08_23.Pensioner;
-import Homework3_from_23_08_23.Worker;
-import Homework5_from_30_08_23.AbleToCalculatePension;
-import Homework5_from_30_08_23.CalculatorUtils;
-import Homework7_from_06_09_23.GenderTypes;
-
 public class MainPerson {
     public static void main(String[] args) {
 //        задание № 4 от 28.08.2023г

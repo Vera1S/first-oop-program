@@ -1,4 +1,4 @@
-package Homework7_from_06_09_23;
+package Homework1_from_16_08_23;
 
 public class Gender {
     //Задание № 6 от 05.09.2023г
