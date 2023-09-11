@@ -84,7 +84,6 @@ public class PensionFund {
         this.numOfFundParticipants = numOfFundParticipants;
     }
 
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

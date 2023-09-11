@@ -44,6 +44,7 @@ public class Pensioner extends Person {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
 
         Pensioner pensioner = (Pensioner) o;
 
@@ -52,8 +53,11 @@ public class Pensioner extends Person {
 
     @Override
     public int hashCode() {
-        long temp = Double.doubleToLongBits(pension);
-        return (int) (temp ^ (temp >>> 32));
+        int result = super.hashCode();
+        long temp;
+        temp = Double.doubleToLongBits(pension);
+        result = 31 * result + (int) (temp ^ (temp >>> 32));
+        return result;
     }
 
     @Override

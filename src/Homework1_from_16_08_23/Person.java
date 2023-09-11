@@ -100,7 +100,8 @@ public abstract class Person  {
         if (Double.compare(person.height, height) != 0) return false;
         if (Double.compare(person.weight, weight) != 0) return false;
         if (money != person.money) return false;
-        return Objects.equals(name, person.name);
+        if (!Objects.equals(name, person.name)) return false;
+        return isGender == person.isGender;
     }
 
     @Override
@@ -114,6 +115,7 @@ public abstract class Person  {
         temp = Double.doubleToLongBits(weight);
         result = 31 * result + (int) (temp ^ (temp >>> 32));
         result = 31 * result + money;
+        result = 31 * result + (isGender != null ? isGender.hashCode() : 0);
         return result;
     }
 
@@ -125,6 +127,7 @@ public abstract class Person  {
                 ", height=" + height +
                 ", weight=" + weight +
                 ", money=" + money +
+                ", isGender=" + isGender +
                 '}';
     }
 }

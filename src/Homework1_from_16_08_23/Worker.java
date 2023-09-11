@@ -87,7 +87,4 @@ public class Worker extends Person implements AbleToCalculatePension {
                 ", maxSalary=" + maxSalary +
                 '}';
     }
-
-
-
 }
