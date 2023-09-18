@@ -52,7 +52,10 @@ public class PensionFund {
 
     //Если фонд не государственный, то результат всегда равен 0 (деньги из фонда украли)
     public double calculatePensionFor(AbleToCalculatePension obj){
-        if (isGos() == true) {
+        if (obj == null){
+            return 0.0;
+        }
+        if (gos) {
             // Государственный фонд, используем метод calculatePension() объекта
             return obj.calculatePension();
         } else {

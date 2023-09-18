@@ -19,32 +19,33 @@ public class Worker extends Person implements AbleToCalculatePension {
         super();
         this.maxSalary = (int) maxSalary;
     }
+
     @Override
     public double calculatePension() {
-        return CalculatorUtils.calculateAverage(minSalary, maxSalary) * 0.25;
-    }
-
-    @Override
-    public double calculatePension(GenderTypes gender) {
-
-        if (gender == GenderTypes.FEMALE) {
+        if (getIsGender() == null){
+            return 0.0;
+        }
+        if (getIsGender() == GenderTypes.FEMALE) {
             return CalculatorUtils.calculateAverage(minSalary / 2, maxSalary * 2) * 0.25;
-        }else{
-
+        } else {
             return CalculatorUtils.calculateAverage(minSalary, maxSalary) * 0.25;
         }
+    }
 
-        }
-    public int getMinSalary(){
+
+    public int getMinSalary() {
         return minSalary;
     }
-    public int getMaxSalary(){
+
+    public int getMaxSalary() {
         return maxSalary;
     }
-    public void setMinSalary(){
+
+    public void setMinSalary() {
         this.minSalary = minSalary;
     }
-    public void setMaxSalary(){
+
+    public void setMaxSalary() {
         this.maxSalary = maxSalary;
     }
 
@@ -56,8 +57,8 @@ public class Worker extends Person implements AbleToCalculatePension {
     }
 
     @Override
-    public void die(int years){
-               System.out.println("Этот человек не доживет до пенсии и умрет через " + years + "лет");
+    public void die(int years) {
+        System.out.println("Этот человек не доживет до пенсии и умрет через " + years + "лет");
     }
 
     @Override

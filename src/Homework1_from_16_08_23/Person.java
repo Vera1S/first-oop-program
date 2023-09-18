@@ -1,10 +1,8 @@
 package Homework1_from_16_08_23;
 
 import java.util.Objects;
-
-public abstract class Person  {
-    //    Задача № 1 от 16.08.2023г
-    //    Создать класс Person.
+//    Задача № 1 от 16.08.2023г
+//    Создать класс Person.
 //2) В нем добавить такие поля:
 //а) Имя человека (выбрать самостоятельно тип данных)
 //б) Возраст человека (выбрать самостоятельно тип данных)
@@ -19,6 +17,8 @@ public abstract class Person  {
 //6) Добавить поле "money" и создать метод getMoney, который делает return money (То есть просто возвращает
 // количество денег у человека). Мы это тему еще не проходили, поэтому подсказки в личные сообщения просите спокойно.
 //7) перед int money переменной поставить ключевое слово private. Описать, что произойдет в программе.
+public abstract class Person  {
+
     private String name;
     private int age;
     private double height;

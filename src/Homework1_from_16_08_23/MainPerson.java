@@ -38,8 +38,7 @@ public class MainPerson {
         System.out.println(noStateFund.getNumOfFundParticipants());
         stateFund.infoState();
         noStateFund.infoState();
-//        stateFund.gos = true;
-//        stateFund.gos = false;
+
         System.out.println();
         pensioner.getPension();
         pensioner.die();

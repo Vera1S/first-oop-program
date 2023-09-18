@@ -1,14 +1,14 @@
 package Lesson7_06_09_23;
 
 import java.util.Arrays;
-
-public class Field {
 //Улучшить наш морской бой
 //1) Все числа в классе FieldGenerator вынести, как private final static переменные (константы) прямо в этом классе
 //2) Добавить классам, описывающим структуры (поле, например) гетеры, сетеры и реализовать все нужные методы из класса object
 //3) Добавить возможность "стрелять" не 1 раз, а 10 раз. ввести подсчет очков
-    private Cell[][] cells;
 
+public class Field {
+
+    private Cell[][] cells;
     public Field(Cell[][] cells) {
         this.cells = cells;
     }
