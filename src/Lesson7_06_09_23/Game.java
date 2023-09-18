@@ -6,7 +6,7 @@ public class Game {
 
     private MessagePrinter messagePrinter;
     private Scanner scanner;
-    private final static int SHOTS_FIRED = 2;
+    private final static int SHOTS_FIRED = 10;
     private int counter = 0;
 
     public Game(MessagePrinter messagePrinter, Scanner scanner) {
