@@ -31,7 +31,7 @@ public class TaskArrayList {
 
     public static ArrayList<Integer> createArrayList(int size, int max, int min) {
         Random random = new Random();
-        ArrayList<Integer> arrayList = new ArrayList<Integer>(size);
+        ArrayList<Integer> arrayList = new ArrayList<>(size);
         for (int i = 0; i < size; i++) {
             arrayList.add(random.nextInt(min, max));
 
