@@ -18,4 +18,6 @@ public class MessagePrinter {
     public void printLoseMessage() {
         System.out.println("Обидно");
     }
+
 }
+

@@ -1,6 +1,4 @@
 package Homework1_from_16_08_23;
-
-public class CalculatorUtils {
 //    Задача № 5 от 30.08.2023г
 //1) Создайте класс-утилиту CalculatorUtils, в котором будет два статических метода с перегрузкой (overloading)
 //
@@ -16,7 +14,7 @@ public class CalculatorUtils {
 //У каждого Worker'а есть две переменных - максимальная и минимальная зарплата. Используйте метод из утилиты
 // CalculatorUtils, чтобы найти среднее значение этих двух чисел. После этого возьмите 25% от получившегося
 // значения - это и будет полученная пенсия.
-
+public class CalculatorUtils {
     public static double calculateAverage(int first, int second) {
         return  (first + second) / 2.0;
     }

@@ -2,7 +2,7 @@ package Homework1_from_16_08_23;
 
 public class Worker extends Person implements AbleToCalculatePension {
 
-
+private static double PERCENT_OF_PENSION = 0.25;
     private int minSalary;
     private int maxSalary;
 
@@ -26,9 +26,9 @@ public class Worker extends Person implements AbleToCalculatePension {
             return 0.0;
         }
         if (getIsGender() == GenderTypes.FEMALE) {
-            return CalculatorUtils.calculateAverage(minSalary / 2, maxSalary * 2) * 0.25;
+            return CalculatorUtils.calculateAverage(minSalary / 2, maxSalary * 2) * PERCENT_OF_PENSION;
         } else {
-            return CalculatorUtils.calculateAverage(minSalary, maxSalary) * 0.25;
+            return CalculatorUtils.calculateAverage(minSalary, maxSalary) * PERCENT_OF_PENSION;
         }
     }
 
