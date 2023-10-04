@@ -25,30 +25,39 @@ private static double PERCENT_OF_PENSION = 0.25;
         if (getIsGender() == null){
             return 0.0;
         }
-        if (getIsGender() == GenderTypes.FEMALE) {
-            return CalculatorUtils.calculateAverage(minSalary / 2, maxSalary * 2) * PERCENT_OF_PENSION;
-        } else {
-            return CalculatorUtils.calculateAverage(minSalary, maxSalary) * PERCENT_OF_PENSION;
-        }
-    }
+        double averageSalary;
 
+        if (getIsGender() == GenderTypes.FEMALE) {
+            averageSalary = CalculatorUtils.calculateAverage(minSalary / 2, maxSalary * 2);
+        } else {
+            averageSalary = CalculatorUtils.calculateAverage(minSalary, maxSalary);
+        }
+        return averageSalary * PERCENT_OF_PENSION;
+    }
 
     public int getMinSalary() {
         return minSalary;
+    }
+
+    public void setMinSalary(int minSalary) {
+        this.minSalary = minSalary;
     }
 
     public int getMaxSalary() {
         return maxSalary;
     }
 
-    public void setMinSalary() {
-        this.minSalary = minSalary;
-    }
-
-    public void setMaxSalary() {
+    public void setMaxSalary(int maxSalary) {
         this.maxSalary = maxSalary;
     }
 
+    public static double getPercentOfPension() {
+        return PERCENT_OF_PENSION;
+    }
+
+    public static void setPercentOfPension(double percentOfPension) {
+        PERCENT_OF_PENSION = percentOfPension;
+    }
 
     @Override
     public void die() {
@@ -89,3 +98,4 @@ private static double PERCENT_OF_PENSION = 0.25;
                 '}';
     }
 }
+

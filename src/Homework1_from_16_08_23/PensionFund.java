@@ -1,8 +1,6 @@
 package Homework1_from_16_08_23;
 
 import java.util.Objects;
-
-public class PensionFund {
 //    Задание № 2 от 21.08.2023г
 //    У вас есть класс Person.
 //1) Сделать его правильным - создать геттеры и сеттеры, проверить, что он соответствует тем правилам,
@@ -21,7 +19,9 @@ public class PensionFund {
 // информация должна содержать строку о том, сколько ТЫСЯЧ человек используют фонд.
 // Для не-государственных - сколько человек используют фонд (не ТЫСЯЧ)
 
-    //5) Запретить менять дату создания фонда (отобрать сеттер)
+//5) Запретить менять дату создания фонда (отобрать сеттер)
+public class PensionFund {
+
     private String pensFundName;
     public boolean gos;
     private String dateOfCreation;
@@ -57,7 +57,7 @@ public class PensionFund {
         }
         if (gos) {
             // Государственный фонд, используем метод calculatePension() объекта
-            return obj.calculatePension();
+            return obj.calculatePension() * 0.8;
         } else {
             System.out.println("Деньги из фонда украли");
             return 0.0;

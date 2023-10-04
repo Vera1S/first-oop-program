@@ -1,6 +1,4 @@
 package Homework1_from_16_08_23;
-
-public class Pensioner extends Person {
 //Задание № 3 от 23.08.2023г
 // У вас есть класс Person.
 //
@@ -15,7 +13,7 @@ public class Pensioner extends Person {
 
 //4) В классе Pensioner переопределяем так: пишем на экран "Этот пенсионер умер, он заработал: x".
 // Где вместо x нужно рассчитать значение по формуле "(age-50)*pension"
-
+public class Pensioner extends Person {
     private double pension;
 
     public Pensioner(String name, int age, double height, double weight, int money, double pension){
