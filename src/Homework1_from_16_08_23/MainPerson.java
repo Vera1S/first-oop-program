@@ -1,4 +1,8 @@
 package Homework1_from_16_08_23;
+
+import java.util.ArrayList;
+import java.util.List;
+
 //        задание № 4 от 28.08.2023г
 // 1) Создайте метод public void die(int years) в классе Person, сделайте его абстрактным.
 // Этот метод будет отличаться от обычного die() тем, что человек будет умирать не сразу, а через некоторое количество
@@ -14,8 +18,8 @@ public class MainPerson {
         Person person2 = new Worker("Nikolai", 42, 180, 80.5, 2500);
         Person person3 = new Pensioner("Svetlana", 72, 165, 65.8, 6500, 365);
 
-        PensionFund stateFund = new PensionFund("Ромашка", "2000 years", true, 3000);
-        PensionFund noStateFund = new PensionFund("Ромашка", "2015 год", false, 300);
+        PensionFund stateFund = new PensionFund("Ромашка", "2000 years", true, new ArrayList<>());
+        PensionFund noStateFund = new PensionFund("Ромашка", "2015 год", false, new ArrayList<>());
 
         Pensioner pensioner = new Pensioner("Anton", 55, 175, 75, 150000, 365);
         Worker worker1 = new Worker("Katerina", 35, 175, 65, 4500);
@@ -25,39 +29,47 @@ public class MainPerson {
         person1.infoOfPerson();
         person2.infoOfPerson();
         person3.infoOfPerson();
-        System.out.println();
-        System.out.println(person1.getName() + " я учусь и получаю степендию - " + person1.getMoney(9600) + "$ в год");
-        System.out.println(person2.getName() + " " + person2.goToWent() + " как проклятый до пенсии долеко - " + person2.getMoney(30000) + "$ в год");
-        System.out.println(maria.getName() + " " + person3.goToWent() + " моя пенсия - " + person3.getMoney(18000) + "$ в год");
-        System.out.println();
-        stateFund.setNumOfFundParticipants(15000);
-        System.out.println(stateFund.getNumOfFundParticipants());
-
-        noStateFund.setNumOfFundParticipants(850);
-        System.out.println(noStateFund.getNumOfFundParticipants());
-        stateFund.infoState();
-        noStateFund.infoState();
-
-        System.out.println();
-        pensioner.getPension();
-        pensioner.die();
-        pensioner.die(50);
-        worker1.die();
-        worker2.die(55);
+//        System.out.println();
+//        System.out.println(person1.getName() + " я учусь и получаю степендию - " + person1.getMoney(9600) + "$ в год");
+//        System.out.println(person2.getName() + " " + person2.goToWent() + " как проклятый до пенсии долеко - " + person2.getMoney(30000) + "$ в год");
+//        System.out.println(maria.getName() + " " + person3.goToWent() + " моя пенсия - " + person3.getMoney(18000) + "$ в год");
+//        System.out.println();
+////        stateFund.getPersons();
+//        System.out.println(stateFund.getPersons());
+//        System.out.println();
+//        pensioner.getPension();
+//        pensioner.die();
+//        pensioner.die(50);
+//        worker1.die();
+//        worker2.die(55);
 
         worker1.setIsGender(GenderTypes.FEMALE);
         worker2.setIsGender(GenderTypes.MALE);
-        maria.setMaxSalary(100000000);
-        maria.setMinSalary(100000);
+        maria.setMaxSalary(2000);
+        maria.setMinSalary(1000);
+        worker1.setMaxSalary(5000);
+        worker1.setMinSalary(3000);
+        worker2.setMaxSalary(7000);
+        worker2.setMinSalary(1000);
 
         double result = stateFund.calculatePensionFor(maria);
-        System.out.println(result);
+//        System.out.println(result);
 
         GenderTypes worker1Gender = worker1.getIsGender();
         GenderTypes worker2Gender = worker2.getIsGender();
 
-        System.out.println(worker1Gender);
-        System.out.println(worker2Gender);
+//        System.out.println(worker1Gender);
+//        System.out.println(worker2Gender);
+
+        System.out.println(stateFund);
+        List<Worker> personsStateFund = new ArrayList<>();
+        personsStateFund.add(worker1);
+        personsStateFund.add(worker2);
+        personsStateFund.add(maria);
+        stateFund.setPersons(personsStateFund);
+        System.out.println(stateFund);
+        System.out.println(stateFund.calculateMedianPension());
+
 
     }
 }

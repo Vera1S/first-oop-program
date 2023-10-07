@@ -2,7 +2,7 @@ package Homework1_from_16_08_23;
 
 public class Worker extends Person implements AbleToCalculatePension {
 
-private static double PERCENT_OF_PENSION = 0.25;
+    private static double PERCENT_OF_PENSION = 0.25;
     private int minSalary;
     private int maxSalary;
 
@@ -22,7 +22,7 @@ private static double PERCENT_OF_PENSION = 0.25;
 
     @Override
     public double calculatePension() {
-        if (getIsGender() == null){
+        if (getIsGender() == null) {
             return 0.0;
         }
         double averageSalary;
