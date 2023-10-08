@@ -1,4 +1,4 @@
-package Homework11_from_20_09_23;
+package Lesson10_18_09_23;
 import java.util.Arrays;
 
 public class FirstArrayList {
@@ -82,5 +82,13 @@ public class FirstArrayList {
             newArr[i] = array[i];
         }
         array = newArr;
+    }
+
+    @Override
+    public String toString() {
+        return "FirstArrayList{" +
+                "array=" + Arrays.toString(array) +
+                ", size=" + size +
+                '}';
     }
 }
