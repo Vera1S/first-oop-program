@@ -3,6 +3,7 @@ package Lesson6_05_09_23;
 public class Cabriolet extends Car implements Refuelable {
 
     public boolean isOpened;
+    private EngineType engineType;
 
     public Cabriolet(int id, String model, String color, int currentSpeed, boolean isOpened) {
         super(id, model, color, currentSpeed);
@@ -17,5 +18,13 @@ public class Cabriolet extends Car implements Refuelable {
     @Override
     public void refuel() {
         System.out.println("кабриолет зарпавили бензином с высоким октановым числом, 95+");
+    }
+
+    public EngineType getEngineType() {
+        return engineType;
+    }
+
+    public void setEngineType(EngineType engineType) {
+        this.engineType = engineType;
     }
 }
