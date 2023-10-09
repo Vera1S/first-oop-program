@@ -10,7 +10,7 @@ public class Main_Set {
 
         GasStation gasStation = new GasStation();
 
-        List<Cabriolet> cabriolets = new ArrayList<>();
+        ArrayList<Cabriolet> cabriolets = new ArrayList<>();
         Cabriolet cabrioletFirst = new Cabriolet(1, "BMW", "black", 0, true);
         cabrioletFirst.setEngineType(EngineType.GAS);
         Cabriolet cabrioletSecond = new Cabriolet(1, "BMW", "black", 0, true);
@@ -18,7 +18,7 @@ public class Main_Set {
         cabriolets.add(cabrioletFirst);
         cabriolets.add(cabrioletSecond);
 
-        gasStation.setCabriolets((ArrayList<Cabriolet>) cabriolets);
+        gasStation.setCabriolets(cabriolets);
 
         Set<EngineType> engineTypes = new HashSet<>();
         engineTypes.add(EngineType.DIESEL);
