@@ -46,6 +46,7 @@ public class Worker extends Person implements AbleToCalculatePension {
         return averageSalary * PERCENT_OF_PENSION * (1 + experienceMoney);
     }
 
+
     public int getMinSalary() {
         return minSalary;
     }
