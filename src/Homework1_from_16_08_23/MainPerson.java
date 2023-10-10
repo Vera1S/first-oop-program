@@ -1,7 +1,9 @@
 package Homework1_from_16_08_23;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 //        задание № 4 от 28.08.2023г
 // 1) Создайте метод public void die(int years) в классе Person, сделайте его абстрактным.
@@ -70,6 +72,13 @@ public class MainPerson {
         System.out.println(stateFund);
         System.out.println(stateFund.calculateMedianPension());
 
+        Set<ProfessionsType> professionsTypes = new HashSet<>();
+        professionsTypes.add(ProfessionsType.MANAGER);
+        professionsTypes.add(ProfessionsType.PROGRAMMER);
+        professionsTypes.add(ProfessionsType.SELLER);
+        professionsTypes.add(ProfessionsType.BUILDER);
+        professionsTypes.add(ProfessionsType.ANALYST);
 
+        System.out.println(professionsTypes);
     }
 }
