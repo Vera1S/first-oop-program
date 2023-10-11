@@ -1,6 +1,6 @@
 package Lesson6_05_09_23;
 
-public class Cabriolet extends Car implements Refuelable {
+public class Cabriolet extends Car implements Refuelable, Comparable<Cabriolet> {
 
     public boolean isOpened;
     private EngineType engineType;
@@ -26,5 +26,10 @@ public class Cabriolet extends Car implements Refuelable {
 
     public void setEngineType(EngineType engineType) {
         this.engineType = engineType;
+    }
+
+    @Override
+    public int compareTo(Cabriolet o) {
+        return 0;
     }
 }

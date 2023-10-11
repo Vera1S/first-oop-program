@@ -40,9 +40,10 @@ public class Worker extends Person implements AbleToCalculatePension {
         }
         double experienceMoney = 0.0;
 
-        int countProfessionsType = professionsTypes.size();
-        experienceMoney = countProfessionsType / COUNT_OF_PROFS * COEFFICIENT_TO_PROFESSION;
-
+        if (professionsTypes != null) {
+            int countProfessionsType = professionsTypes.size();
+            experienceMoney = countProfessionsType / COUNT_OF_PROFS * COEFFICIENT_TO_PROFESSION;
+        }
         return averageSalary * PERCENT_OF_PENSION * (1 + experienceMoney);
     }
 
