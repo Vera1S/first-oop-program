@@ -30,19 +30,19 @@ public class MainPerson {
         person1.infoOfPerson();
         person2.infoOfPerson();
         person3.infoOfPerson();
-//        System.out.println();
-//        System.out.println(person1.getName() + " я учусь и получаю степендию - " + person1.getMoney(9600) + "$ в год");
-//        System.out.println(person2.getName() + " " + person2.goToWent() + " как проклятый до пенсии долеко - " + person2.getMoney(30000) + "$ в год");
-//        System.out.println(maria.getName() + " " + person3.goToWent() + " моя пенсия - " + person3.getMoney(18000) + "$ в год");
-//        System.out.println();
-////        stateFund.getPersons();
-//        System.out.println(stateFund.getPersons());
-//        System.out.println();
-//        pensioner.getPension();
-//        pensioner.die();
-//        pensioner.die(50);
-//        worker1.die();
-//        worker2.die(55);
+        System.out.println();
+        System.out.println(person1.getName() + " я учусь и получаю степендию - " + person1.getMoney(9600) + "$ в год");
+        System.out.println(person2.getName() + " " + person2.goToWent() + " как проклятый до пенсии долеко - " + person2.getMoney(30000) + "$ в год");
+        System.out.println(maria.getName() + " " + person3.goToWent() + " моя пенсия - " + person3.getMoney(18000) + "$ в год");
+        System.out.println();
+//        stateFund.getPersons();
+        System.out.println(stateFund.getPersons());
+        System.out.println();
+        pensioner.getPension();
+        pensioner.die();
+        pensioner.die(50);
+        worker1.die();
+        worker2.die(55);
 
         worker1.setIsGender(GenderTypes.FEMALE);
         worker2.setIsGender(GenderTypes.MALE);
@@ -59,8 +59,8 @@ public class MainPerson {
         GenderTypes worker1Gender = worker1.getIsGender();
         GenderTypes worker2Gender = worker2.getIsGender();
 
-//        System.out.println(worker1Gender);
-//        System.out.println(worker2Gender);
+        System.out.println(worker1Gender);
+        System.out.println(worker2Gender);
 
         System.out.println(stateFund);
         List<Worker> personsStateFund = new ArrayList<>();
@@ -82,11 +82,11 @@ public class MainPerson {
 
         Map<String, String> map = new HashMap<>();
         LocalDate localDate = LocalDate.now();
-        int dayOfMonth = localDate.getDayOfMonth();
+
         DayOfWeek dayOfWeek = localDate.getDayOfWeek();
         System.out.println(localDate);
         System.out.println(dayOfWeek);
-
+        System.out.printf("%d.%d.%d \n", dayOfWeek);
 
     }
 }
