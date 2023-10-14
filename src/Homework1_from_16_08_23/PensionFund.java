@@ -1,6 +1,10 @@
 package Homework1_from_16_08_23;
 
+import java.time.DayOfWeek;
+import java.time.LocalDate;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 //    Задание № 2 от 21.08.2023г
 //    У вас есть класс Person.
@@ -28,11 +32,14 @@ public class PensionFund {
     private String dateOfCreation;
     private List<Worker> persons;
 
+    private Map<DayOfWeek, Boolean> workDays;
+
     public PensionFund(String pensFundName, String dateOfCreation, boolean gos, List<Worker> persons) {
         this.pensFundName = pensFundName;
         this.gos = gos;
         this.dateOfCreation = dateOfCreation;
         this.persons = persons;
+        this.workDays = new HashMap<>();
 
     }
 
@@ -70,13 +77,24 @@ public class PensionFund {
         if (obj == null) {
             return 0.0;
         }
-        if (gos) {
+        if (gos && isWorkDayToday()) {
             // Государственный фонд, используем метод calculatePension() объекта
             return obj.calculatePension() * 0.8;
         } else {
             System.out.println("Деньги из фонда украли");
             return 0.0;
         }
+    }
+    private boolean isWorkDayToday() {
+        LocalDate localDate = LocalDate.now();
+        DayOfWeek dayOfWeekNow = localDate.getDayOfWeek();
+
+        if (workDays == null) {
+            return false;
+        }
+
+        boolean isWorkDay = workDays.get(dayOfWeekNow);
+        return isWorkDay;
     }
     public double calculateMedianPension() {
         if (persons == null || persons.size() == 0){
@@ -113,6 +131,14 @@ public class PensionFund {
         this.persons = persons;
     }
 
+    public Map<DayOfWeek, Boolean> getWorkDays() {
+        return workDays;
+    }
+
+    public void setWorkDays(Map<DayOfWeek, Boolean> workDays) {
+        this.workDays = workDays;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -124,7 +150,8 @@ public class PensionFund {
         if (!Objects.equals(pensFundName, that.pensFundName)) return false;
         if (!Objects.equals(dateOfCreation, that.dateOfCreation))
             return false;
-        return Objects.equals(persons, that.persons);
+        if (!Objects.equals(persons, that.persons)) return false;
+        return Objects.equals(workDays, that.workDays);
     }
 
     @Override
@@ -133,6 +160,7 @@ public class PensionFund {
         result = 31 * result + (gos ? 1 : 0);
         result = 31 * result + (dateOfCreation != null ? dateOfCreation.hashCode() : 0);
         result = 31 * result + (persons != null ? persons.hashCode() : 0);
+        result = 31 * result + (workDays != null ? workDays.hashCode() : 0);
         return result;
     }
 
@@ -143,6 +171,7 @@ public class PensionFund {
                 ", gos=" + gos +
                 ", dateOfCreation='" + dateOfCreation + '\'' +
                 ", persons=" + persons +
+                ", workDays=" + workDays +
                 '}';
     }
 }

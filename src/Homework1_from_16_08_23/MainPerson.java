@@ -1,9 +1,8 @@
 package Homework1_from_16_08_23;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.time.DayOfWeek;
+import java.time.LocalDate;
+import java.util.*;
 
 //        задание № 4 от 28.08.2023г
 // 1) Создайте метод public void die(int years) в классе Person, сделайте его абстрактным.
@@ -80,5 +79,10 @@ public class MainPerson {
         professionsTypes.add(ProfessionsType.ANALYST);
 
         System.out.println(professionsTypes);
+
+        Map<String, String> map = new HashMap<>();
+        LocalDate localDate = new LocalDate();
+        DayOfWeek dayOfWeek = localDate.getDayOfWeek();
+
     }
 }
