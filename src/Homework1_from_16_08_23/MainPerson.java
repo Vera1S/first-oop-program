@@ -54,7 +54,7 @@ public class MainPerson {
         worker2.setMinSalary(1000);
 
         double result = stateFund.calculatePensionFor(maria);
-//        System.out.println(result);
+        System.out.println(result);
 
         GenderTypes worker1Gender = worker1.getIsGender();
         GenderTypes worker2Gender = worker2.getIsGender();
@@ -81,8 +81,12 @@ public class MainPerson {
         System.out.println(professionsTypes);
 
         Map<String, String> map = new HashMap<>();
-        LocalDate localDate = new LocalDate();
+        LocalDate localDate = LocalDate.now();
+        int dayOfMonth = localDate.getDayOfMonth();
         DayOfWeek dayOfWeek = localDate.getDayOfWeek();
+        System.out.println(localDate);
+        System.out.println(dayOfWeek);
+
 
     }
 }
