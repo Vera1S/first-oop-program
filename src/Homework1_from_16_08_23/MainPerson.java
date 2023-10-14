@@ -82,7 +82,7 @@ public class MainPerson {
 
         Map<String, String> map = new HashMap<>();
         LocalDate localDate = LocalDate.now();
-
+        int dayOfMonth = localDate.getDayOfMonth();
         DayOfWeek dayOfWeek = localDate.getDayOfWeek();
         System.out.println(localDate);
         System.out.println(dayOfWeek);
