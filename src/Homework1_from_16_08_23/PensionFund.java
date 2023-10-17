@@ -77,7 +77,7 @@ public class PensionFund {
         if (obj == null) {
             return 0.0;
         }
-        if (gos && isWorkDayToday()) {
+        if (gos && isWorkDayToday() || workDays == null) {
             // Государственный фонд, используем метод calculatePension() объекта
             return obj.calculatePension() * 0.8;
         } else {
@@ -85,6 +85,7 @@ public class PensionFund {
             return 0.0;
         }
     }
+
     private boolean isWorkDayToday() {
         LocalDate localDate = LocalDate.now();
         DayOfWeek dayOfWeekNow = localDate.getDayOfWeek();
@@ -93,16 +94,20 @@ public class PensionFund {
             return false;
         }
 
-        boolean isWorkDay = workDays.get(dayOfWeekNow);
+        Boolean isWorkDay = workDays.get(dayOfWeekNow);
+        if (isWorkDay == null) {
+            return false;
+        }
         return isWorkDay;
     }
+
     public double calculateMedianPension() {
-        if (persons == null || persons.size() == 0){
+        if (persons == null || persons.size() == 0) {
             return 0.0;
         }
         double sum = 0.0;
-        for (Worker worker : persons){
-           sum += calculatePensionFor(worker);
+        for (Worker worker : persons) {
+            sum += calculatePensionFor(worker);
         }
         return sum / persons.size();
     }

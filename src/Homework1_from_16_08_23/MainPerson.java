@@ -86,7 +86,7 @@ public class MainPerson {
         DayOfWeek dayOfWeek = localDate.getDayOfWeek();
         System.out.println(localDate);
         System.out.println(dayOfWeek);
-        System.out.printf("%d.%d.%d \n", dayOfWeek);
+
 
     }
 }
