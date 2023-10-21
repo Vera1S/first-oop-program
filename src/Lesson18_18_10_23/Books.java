@@ -7,14 +7,14 @@ public class Books {
 
     private BookStatus status;
 
-    public Book(int id, String name, BookStatus status) {
-        this.id = id;
-        this.name = name;
-        this.status = status;
-    }
-
-    public int getId() {
-        return id;
+//    public Book(int id, String name, BookStatus status) {
+//        this.id = id;
+//        this.name = name;
+//        this.status = status;
+//    }
+//
+//    public int getId() {
+//        return id;
     }
 
     public void setId(int id) {
