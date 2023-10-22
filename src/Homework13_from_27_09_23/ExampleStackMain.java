@@ -90,5 +90,32 @@ public class ExampleStackMain {
 //            }
 //        }
 
+        //Вариант 3 к задаче
+
+//        public static void main(String[] args) {
+//            String encodedMessage = "евирпим, тр";
+//
+//            Stack<Character> stack = new Stack<>();
+//            for (char c : encodedMessage.toCharArray()) {
+//
+//                stack.push(c);// Добавляем буквы в стек
+//                if (stack.size() == 5) {
+//                    while (!stack.isEmpty()) {
+//                        System.out.print(stack.pop());
+//                    }
+//                }
+//
+//            }
+//
+//// Выводим оставшиеся буквы, если есть
+//
+//            while (!stack.isEmpty()) {
+//
+//                System.out.print(stack.pop());
+//            }
+//
+//        }
+//    }
+
     }
 }

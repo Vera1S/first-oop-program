@@ -12,50 +12,30 @@ import java.util.Stack;
 буквы по одной выводить на экран
     */
 public class TaskStack {
-
     public static void main(String[] args) {
-        String encodedMessage = "(Приве)(т, ми)р";
 
+        String message = "евирпим, тр";
 
+        Stack<Character> stack = new Stack<>();
 
-        if (encodedMessage == null) {
-            return false;
+        for (int i = 0; i < message.length(); i++) {
+            stack.push(message.charAt(i));
 
-            boolean isCorrect = true;
-
-            Stack<Character> stack = new Stack<>();
-
-            for (int i = 0; i < encodedMessage.length(); i++) {
-                char symbol = encodedMessage.charAt(i);
-                if (symbol == '(') {
-                    stack.push(symbol);
-                }
-                if (symbol == ')' && (stack.isEmpty() || stack.pop() != (symbol))) {
-                    return false;
+            if (stack.size() == 5) {
+                while (!stack.isEmpty()) {
+                    System.out.print(stack.pop());
                 }
             }
-            return stack.isEmpty();
         }
-//            for (char c : encodedMessage.toCharArray()) {
-//                if (c == ')') { //убираем скобки
-//                    StringBuilder word = new StringBuilder();
-//                    // Переворачиваем и выводим буквы слова
-//                    System.out.print(word.reverse().toString());
-//                } else if (c == '(') {
-//
-//                } else {
-//
-//                    stack.push(c);// Добавляем буквы в стек
-//                }
-
-
-// Выводим оставшиеся буквы, если есть
-
-//            while (!stack.isEmpty()) {
-//
-//                System.out.print(stack.pop());
-//            }
-
-        }
+                while (!stack.isEmpty()){
+                    System.out.print(stack.pop());
+                }
     }
 }
+
+
+
+
+
+
+
