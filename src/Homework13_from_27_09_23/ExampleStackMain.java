@@ -63,7 +63,7 @@ public class ExampleStackMain {
 
 //        public class MainStack {
 //            public static void main(String[] args) {
-//                String encodedMessage = "Привет, мир";
+//                String encodedMessage = "(Приве)(т, ми)р";
 //
 //                Stack<Character> stack = new Stack<>();
 //                for (char c : encodedMessage.toCharArray()) {
