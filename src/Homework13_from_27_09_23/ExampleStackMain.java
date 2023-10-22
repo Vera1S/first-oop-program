@@ -59,5 +59,36 @@ public class ExampleStackMain {
 //            System.out.println("не верно"); //а иначе "не верно"
 //        }
 
+        //Задача вариант 2
+
+//        public class MainStack {
+//            public static void main(String[] args) {
+//                String encodedMessage = "Привет, мир";
+//
+//                Stack<Character> stack = new Stack<>();
+//                for (char c : encodedMessage.toCharArray()) {
+//                    if (c == ')') { //убираем скобки
+//                        StringBuilder word = new StringBuilder();
+//                        // Переворачиваем и выводим буквы слова
+//                        System.out.print(word.reverse().toString());
+//                    } else if (c == '(') {
+//
+//                    } else {
+//
+//                        stack.push(c);// Добавляем буквы в стек
+//                    }
+//
+//
+//// Выводим оставшиеся буквы, если есть
+//
+//                    while (!stack.isEmpty()) {
+//
+//                        System.out.print(stack.pop());
+//                    }
+//
+//                }
+//            }
+//        }
+
     }
 }
