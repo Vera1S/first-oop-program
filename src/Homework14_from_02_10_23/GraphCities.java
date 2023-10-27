@@ -29,7 +29,7 @@ public class GraphCities {
         return null;
     }
     //For-each
-    // public Constable get(String name) {
+    // public String get(String name) {
     //        for (String s : city) {
     //            if (s.equals(name)) {
     //                return s;
