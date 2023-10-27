@@ -48,5 +48,7 @@ public class MainGraph {
         String resultV = graphCitiesA.get("G");
         System.out.println("Из города А в город: " + resultV);
 
+        //и т.д.
+
     }
 }
