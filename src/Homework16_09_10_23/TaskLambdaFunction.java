@@ -78,7 +78,7 @@ public class TaskLambdaFunction {
         Consumer<String> inputConsumer1 = d -> {
             Scanner scanner = new Scanner(System.in);
             System.out.println("Введите число: ");
-            int num1 = Integer.valueOf(scanner.next());
+            int num1 = Integer.parseInt(scanner.next());
             for (int i = 0; i < num1; i++) {
                 String result3 = num1 + d;
                 System.out.println(result3);
