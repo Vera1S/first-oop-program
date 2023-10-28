@@ -81,7 +81,7 @@ public class TaskLambdaFunction {
             int num1 = Integer.parseInt(scanner.next());
             for (int i = 0; i < num1; i++) {
                 String result3 = num1 + d;
-                System.out.println(result3);
+                System.out.println(result3); // Я не понимаю, как сделать без цифры
             }
         };
         inputConsumer1.accept("Hello!");
