@@ -8,7 +8,7 @@ public class BooksStream {
         //Найти все книги, у которых id делится на 2
 
         //students.stream()
-        List<Book> book = new List();
+       // List<Books> book = new List();
 
     }
 }

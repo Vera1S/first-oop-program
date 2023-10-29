@@ -61,40 +61,50 @@ public class TaskLambdaFunction {
         int num = integerSupplier.get();
         System.out.println("Число: " + num);
 
-        Consumer<String> inputConsumer = new Consumer<String>() {
-            @Override
-            public void accept(String d) {
-                Scanner scanner = new Scanner(System.in);
-                System.out.println("Введите число: ");
-                int num1 = Integer.valueOf(scanner.next());
-                for (int i = 0; i < num1; i++) {
-                    String result3 = num1 + d;
-                    System.out.println(result3);
-                }
-            }
-        };
-            inputConsumer.accept("Hello!");
-
+//        Consumer<String> inputConsumer = new Consumer<String>() {
+//            @Override
+//            public void accept(String d) {
+//                Scanner scanner = new Scanner(System.in);
+//                System.out.println("Введите число: ");
+//                int num1 = Integer.valueOf(scanner.next());
+//                for (int i = 0; i < num1; i++) {
+//                    String result3 = num1 + d;
+//                    System.out.println(result3);
+//                }
+//            }
+//        };
+//        inputConsumer.accept("Hello!");
+//
         Consumer<String> inputConsumer1 = d -> {
             Scanner scanner = new Scanner(System.in);
             System.out.println("Введите число: ");
             int num1 = Integer.parseInt(scanner.next());
             for (int i = 0; i < num1; i++) {
-                String result3 = String.valueOf(num1 + d);
+                String result3 = num1 + d;
                 System.out.println(result3); // Я не понимаю, как сделать без цифры
             }
         };
-        inputConsumer1.accept("Hello!");
+        inputConsumer1.accept("Привет!");
+
+//           Этот код не работает
+
+        Consumer<Integer> numConsumer = new Consumer<Integer>() {
+            @Override
+            public void accept(Integer integer) {
+                Scanner scanner = new Scanner(System.in);
+                System.out.println("Введите число: ");
+                int number = scanner.nextInt();
+                for (int i = 0; i < number; i++) {
+                    System.out.println("Hi");
+                }
+            }
+        };
+        numConsumer.accept(5);
 
 
 
-//        Scanner scanner = new Scanner(System.in);
-//        System.out.println("Введите число: ");
-//        int num1 = Integer.valueOf(scanner.next());
-//        for (int i = 0; i < num1; i++) {
-//            System.out.println("Hi" + num1);
-//        }
-        }
 
     }
+
+}
 
