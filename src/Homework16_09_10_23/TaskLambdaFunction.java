@@ -86,24 +86,30 @@ public class TaskLambdaFunction {
         };
         inputConsumer1.accept("Привет!");
 
-//           Этот код не работает
 
-        Consumer<Integer> numConsumer = new Consumer<Integer>() {
-            @Override
-            public void accept(Integer integer) {
-                Scanner scanner = new Scanner(System.in);
-                System.out.println("Введите число: ");
-                int number = scanner.nextInt();
-                for (int i = 0; i < number; i++) {
-                    System.out.println("Hi");
-                }
+
+//        Consumer<Integer> numConsumer = new Consumer<Integer>() {
+//            @Override
+//            public void accept(Integer integer) {
+//                Scanner scanner = new Scanner(System.in);
+//                System.out.println("Введите число: ");
+//                int number = scanner.nextInt();
+//                for (int i = 0; i < number; i++) {
+//                    System.out.println("Hi");
+//                }
+//            }
+//        };
+//        numConsumer.accept(5);
+
+        Consumer<Integer> numberConsumer = integer -> {
+            Scanner scanner = new Scanner(System.in);
+            System.out.println("Введите число: ");
+            int number = scanner.nextInt();
+            for (int i = 0; i < number; i++) {
+                System.out.println("Hi");
             }
         };
-        numConsumer.accept(5);
-
-
-
-
+        numberConsumer.accept(5);
     }
 
 }
