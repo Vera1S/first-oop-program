@@ -28,6 +28,11 @@ public class Task_2_Lambda {
         Function<String> stringFunction = new Function() {
             @Override
             public Object apply(Object o) {
+                String symbolMap = "@zbjkbjdklbjm";
+                for (int j = 0; j < symbolMap.charAt(j); j++);
+                symbol.put(symbolMap, int);
+                System.out.println(symbol);
+
 
             }
         };
