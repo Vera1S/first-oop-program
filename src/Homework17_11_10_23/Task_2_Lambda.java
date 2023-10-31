@@ -25,14 +25,14 @@ public class Task_2_Lambda {
         symbol.put('j', 2);
         symbol.put('@', 4);
         symbol.put('z', 1);
-//        Function<String> stringFunction = new Function() {
-//            @Override
-//            public Object apply(Object o) {
-//
-//            }
-//        };
+        Function<String> stringFunction = new Function() {
+            @Override
+            public Object apply(Object o) {
 
+            }
+        };
 
+//          Вариант Без Supplier
 
     Map<Integer, Character> numberToLetterMap = new HashMap<>();
 Random r = new Random();
@@ -52,29 +52,31 @@ Random r = new Random();
 
 
 
-//        Supplier<String> randomStringSupplier = () -> {
-//            Random random = new Random();
-//            int ranlength = random.nextInt(101);
-//
-//            Map<Integer, Character> numberToLetterMap1 = new HashMap<>();
-//            String alphabet1 = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-//            for (int i = 0; i < 26; i++) {
-//                char letter1 = alphabet1.charAt(i);
-//                numberToLetterMap1.put(i, letter1);
-//            }
-//
-//            StringBuilder randomString = new StringBuilder();
-//            for (int i = 0; i < ranlength; i++) {
-//                int randomNumber1 = random.nextInt(26);
-//                char randomLetter = numberToLetterMap1.get(randomNumber1);
-//                randomString.append(randomLetter);
-//            }
-//
-//            return randomString.toString();
-//        };
-//
-//        String randomString = randomStringSupplier.get();
-//        System.out.println("Сгенерированная строка: " + randomString);
+//          Вариант c Supplier
+
+        Supplier<String> randomStringSupplier = () -> {
+            Random random = new Random();
+            int ranlength = random.nextInt(26);
+
+            Map<Integer, Character> numberToLetterMap1 = new HashMap<>();
+            String alphabet1 = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            for (int i = 0; i < 26; i++) {
+                char letter1 = alphabet1.charAt(i);
+                numberToLetterMap1.put(i, letter1);
+            }
+
+            StringBuilder randomString = new StringBuilder();
+            for (int i = 0; i < ranlength; i++) {
+                int randomNumber1 = random.nextInt(26);
+                char randomLetter = numberToLetterMap1.get(randomNumber1);
+                randomString.append(randomLetter);
+            }
+
+            return randomString.toString();
+        };
+
+        String randomString = randomStringSupplier.get();
+        System.out.println("Сгенерированная строка: " + randomString);
 
 }
 
