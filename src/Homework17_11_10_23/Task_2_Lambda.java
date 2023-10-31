@@ -22,14 +22,18 @@ public class Task_2_Lambda {
     public static void main(String[] args) {
 
         Map<Character, Integer> symbol = new HashMap<>();
-        symbol.put('j', 2);
-        symbol.put('@', 4);
-        symbol.put('z', 1);
+        symbol.put('!', 1);
+        symbol.put('f', 2);
+        symbol.put('@', 1);
+        symbol.put('$', 3);
         Function<String> stringFunction = new Function() {
             @Override
             public Object apply(Object o) {
                 String symbolMap = "@zbjkbjdklbjm";
-                for (int j = 0; j < symbolMap.charAt(j); j++);
+                int key = 0;
+                for (int j = 0; j < symbolMap.length()-1; j++);
+                char h = symbolMap.charAt(symbol.size());
+                System.out.println(h);
                 symbol.put(symbolMap, int);
                 System.out.println(symbol);
 
