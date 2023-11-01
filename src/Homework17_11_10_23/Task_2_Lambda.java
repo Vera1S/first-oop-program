@@ -26,7 +26,7 @@ public class Task_2_Lambda {
         symbol.put('f', 2);
         symbol.put('@', 1);
         symbol.put('$', 3);
-        Function<String> stringFunction = new Function() {
+        Function<String, Integer> stringFunction = new Function() {
             @Override
             public Object apply(Object o) {
                 String symbolMap = "@zbjkbjdklbjm";
