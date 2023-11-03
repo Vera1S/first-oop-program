@@ -20,12 +20,12 @@ import java.util.function.Supplier;
 // создавайте букву. Сделать это можно, например, создав HashMap в которой будет связь число-буква. Или любыми другими способами
 public class Task_2_Lambda {
     public static void main(String[] args) {
-
+//
         Map<Character, Integer> symbol = new HashMap<>();
-        symbol.put('!', 1);
-        symbol.put('f', 2);
-        symbol.put('@', 1);
-        symbol.put('$', 3);
+//        symbol.put('!', 1);
+//        symbol.put('f', 2);
+//        symbol.put('@', 1);
+//        symbol.put('$', 3);
         Function<String, Integer> stringFunction = new Function() {
             @Override
             public Object apply(Object o) {
@@ -34,30 +34,31 @@ public class Task_2_Lambda {
                 for (int j = 0; j < symbolMap.length()-1; j++);
                 char h = symbolMap.charAt(symbol.size());
                 System.out.println(h);
-                symbol.put(symbolMap, int);
+                symbol.put(h, 2);
                 System.out.println(symbol);
-
-
+                return o;
             }
         };
+        Integer o = stringFunction.apply(String.valueOf(stringFunction));
+        System.out.println(o);
 
 //          Вариант Без Supplier
 
-    Map<Integer, Character> numberToLetterMap = new HashMap<>();
-Random r = new Random();
-    // Заполняем отображение чисел и букв
-    String alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    for (int i = 0; i < 26; i++) {
-        char letter = alphabet.charAt(i);
-        System.out.println(letter);
-        numberToLetterMap.put(i, letter);
-        System.out.println(numberToLetterMap);
-    }
+        Map<Integer, Character> numberToLetterMap = new HashMap<>();
+        Random r = new Random();
+        // Заполняем отображение чисел и букв
+        String alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        for (int i = 0; i < 26; i++) {
+            char letter = alphabet.charAt(i);
+            //System.out.println(letter);
+            numberToLetterMap.put(i, letter);
+           // System.out.println(numberToLetterMap);
+        }
 
-    // Пример использования: получение буквы, соответствующей числу
-    int number = r.nextInt(26); // Пример числа (0-25)
-    char letter = numberToLetterMap.get(number);
-    System.out.println("Число " + number + " соответствует букве " + letter);
+        // Пример использования: получение буквы, соответствующей числу
+        int number = r.nextInt(26); // Пример числа (0-25)
+        char letter = numberToLetterMap.get(number);
+        System.out.println("Число " + number + " соответствует букве " + letter);
 
 
 
@@ -65,7 +66,7 @@ Random r = new Random();
 
         Supplier<String> randomStringSupplier = () -> {
             Random random = new Random();
-            int ranlength = random.nextInt(26);
+            int ranlength = random.nextInt(101);
 
             Map<Integer, Character> numberToLetterMap1 = new HashMap<>();
             String alphabet1 = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -88,11 +89,6 @@ Random r = new Random();
         System.out.println("Сгенерированная строка: " + randomString);
 
 }
-
-
-
-
-
         }
 
 
