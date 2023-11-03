@@ -22,10 +22,10 @@ public class Task_2_Lambda {
     public static void main(String[] args) {
 //
         Map<Character, Integer> symbol = new HashMap<>();
-//        symbol.put('!', 1);
-//        symbol.put('f', 2);
-//        symbol.put('@', 1);
-//        symbol.put('$', 3);
+        symbol.put('!', 1);
+        symbol.put('f', 2);
+        symbol.put('@', 1);
+        symbol.put('$', 3);
         Function<String, Integer> stringFunction = new Function() {
             @Override
             public Object apply(Object o) {
@@ -39,8 +39,8 @@ public class Task_2_Lambda {
                 return o;
             }
         };
-        Integer o = stringFunction.apply(String.valueOf(stringFunction));
-        System.out.println(o);
+        //Integer o = stringFunction.apply(stringFunction.toString());
+        System.out.println(stringFunction);
 
 //          Вариант Без Supplier
 
