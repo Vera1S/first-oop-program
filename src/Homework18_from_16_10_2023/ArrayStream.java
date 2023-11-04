@@ -22,7 +22,7 @@ public class ArrayStream {
         }
         System.out.println(number);
 
-        number.stream()
+        long count = number.stream()
                  .map((x) -> x / 2)
                  .filter((x) -> x > 25)
                  .map((x) -> x - 30)
@@ -30,7 +30,7 @@ public class ArrayStream {
                  .limit(5)
                  .count();
 
-        System.out.println(number);
+        System.out.println(count);
 
         // Не понимаю, почему не посчитал сумму?
         // Почему-то я за вами повторяю, а у меня постоянно выходят ошибки,

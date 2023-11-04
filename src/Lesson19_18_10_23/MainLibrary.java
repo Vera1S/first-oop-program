@@ -14,8 +14,8 @@ public class MainLibrary {
         Books bookFifth = new Books(5, "убить пересмешника", BookStatus.OVERDUE);
 
 
-        Student daniil = new Student(null, Set.of((bookThird, bookFourth)));
-        Student vera = new Student("Вера", Set.of((bookFifth, bookFirst)));
+        Student daniil = new Student(null, Set.of(bookThird, bookFourth));
+        Student vera = new Student("Вера", Set.of((bookFifth, bookFirst));
         Student alex = new Student("Alex", Set.of());
         Student tatiana = new Student("Tatiana", of());
 
@@ -38,26 +38,26 @@ public class MainLibrary {
 
         //Имена студентов, у которых больше одной книги
 
-        //long count = students.stream()
-        //        .filter(student -> student.getBooks() != null)
-        //        .filter(student -> student.getBooks().size() > 1)
-        //        .map(Student::getName)
-        //        .count();
+        long count = students.stream()
+                .filter(student -> student.getBooks() != null)
+                .filter(student -> student.getBooks().size() > 1)
+                .map(Student::getName)
+                .count();
 
-        //System.out.println(count);
+        System.out.println(count);
 
 
         //Имена студентов, у которых больше одной книги и есть просроченные книги
 
-        List<String> names = students.stream()
-                .filter(student -> student.getBooks() != null)
-                .filter(student -> student.getBooks().size() > 1)
-                .filter(Student::checkOverdueBooks)
-                .map(Student::getName)
-                .filter(Objects::nonNull)
-                .toList();
-
-        System.out.println(names);
+//        List<String> names = students.stream()
+//                .filter(student -> student.getBooks() != null)
+//                .filter(student -> student.getBooks().size() > 1)
+//                .filter(Student::checkOverdueBooks)
+//                .map(Student::getName)
+//                .filter(Objects::nonNull)
+//                .toList();
+//
+//        System.out.println(names);
 
         //найти людей, у кого просрочены книжки
         //                .filter(student -> {
@@ -92,7 +92,7 @@ public class MainLibrary {
                 .filter(student -> student.getName() != null && student.getName().startsWith("A"))
                 .map(Student::getBooks)
                 .flatMap(Collection::stream)
-              //  .filter(book -> book != null && book.getStatus() != null && book.getStatus() == BookStatus.RESERVED)
+             //  .filter(book -> book != null && book.getStatus() != null && book.getStatus() == BookStatus.RESERVED)
                 .toList();
 
         System.out.println(answer);
@@ -111,12 +111,12 @@ public class MainLibrary {
         HashMap<String, String> hashMap = new HashMap<>();
 
         //количество ключей в мапе, которые начинаются на А
-        long count = hashMap.entrySet().stream()
-                .filter(x -> x.getKey().startsWith("A"))
-                .count();
-
-        hashMap.keySet();
-        hashMap.values();
+//        long count = hashMap.entrySet().stream()
+//                .filter(x -> x.getKey().startsWith("A"))
+//                .count();
+//
+//        hashMap.keySet();
+//        hashMap.values();
 
 
         //students.stream
