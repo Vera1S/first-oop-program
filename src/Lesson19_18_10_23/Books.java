@@ -1,4 +1,4 @@
-package Lesson18_18_10_23;
+package Lesson19_18_10_23;
 
 public class Books {
     private int id;
@@ -7,15 +7,15 @@ public class Books {
 
     private BookStatus status;
 
-//    public Book(int id, String name, BookStatus status) {
-//        this.id = id;
-//        this.name = name;
-//        this.status = status;
-//    }
-//
-//    public int getId() {
-//        return id;
-//    }
+    public Books(int id, String name, BookStatus status) {
+        this.id = id;
+        this.name = name;
+        this.status = status;
+    }
+
+    public int getId() {
+        return id;
+    }
 
     public void setId(int id) {
         this.id = id;

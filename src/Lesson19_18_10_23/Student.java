@@ -16,7 +16,7 @@ public class Student {
     public boolean checkOverdueBooks() {
         long count = books.stream()
                 .filter(Objects::nonNull)
-                .filter(book -> book.getStatus() == BookStatus.OVERDUE)
+               // .filter(book -> book.getStatus() == BookStatus.OVERDUE)
                 .count();
 
         return count > 0;
