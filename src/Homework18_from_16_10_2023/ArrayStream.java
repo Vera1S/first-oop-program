@@ -20,16 +20,23 @@ public class ArrayStream {
         for (int i = 0; i < 100; i++) {
             number.add(random.nextInt(100));
         }
-        //System.out.println(number);
+        System.out.println(number);
 
-         number.stream()
+        number.stream()
                  .map((x) -> x / 2)
                  .filter((x) -> x > 25)
                  .map((x) -> x - 30)
                  .sorted()
                  .limit(5)
                  .count();
+
         System.out.println(number);
+
+        // Не понимаю, почему не посчитал сумму?
+        // Почему-то я за вами повторяю, а у меня постоянно выходят ошибки,
+        // что я не так делаю, можете мне подсказать?
+        // Я уже устала от того, что не один код не получается у меня.((
+
 
 
     }
