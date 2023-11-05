@@ -86,9 +86,23 @@ public class MainStream {
 
         System.out.println(result);
 
+        //          Вариант Без Supplier
 
-
-
+//        Map<Integer, Character> numberToLetterMap = new HashMap<>();
+//        Random r = new Random();
+//        // Заполняем отображение чисел и букв
+//        String alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+//        for (int i = 0; i < 26; i++) {
+//            char letter = alphabet.charAt(i);
+//            //System.out.println(letter);
+//            numberToLetterMap.put(i, letter);
+//           // System.out.println(numberToLetterMap);
+//        }
+//
+//        // Пример использования: получение буквы, соответствующей числу
+//        int number = r.nextInt(26); // Пример числа (0-25)
+//        char letter = numberToLetterMap.get(number);
+//        System.out.println("Число " + number + " соответствует букве " + letter);
 
     }
 

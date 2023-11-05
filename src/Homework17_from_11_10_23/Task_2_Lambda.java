@@ -21,46 +21,8 @@ import java.util.function.Supplier;
 public class Task_2_Lambda {
     public static void main(String[] args) {
 //
-        Map<Character, Integer> symbol = new HashMap<>();
-        symbol.put('!', 1);
-        symbol.put('f', 2);
-        symbol.put('@', 1);
-        symbol.put('$', 3);
-        Function<String, Integer> stringFunction = new Function() {
-            @Override
-            public Object apply(Object o) {
-                String symbolMap = "@zbjkbjdklbjm";
-                int key = 0;
-                for (int j = 0; j < symbolMap.length()-1; j++);
-                char h = symbolMap.charAt(symbol.size());
-                System.out.println(h);
-                symbol.put(h, 2);
-                System.out.println(symbol);
-                return o;
-            }
-        };
-        //Integer o = stringFunction.apply(stringFunction.toString());
-        System.out.println(stringFunction);
 
-//          Вариант Без Supplier
-
-        Map<Integer, Character> numberToLetterMap = new HashMap<>();
-        Random r = new Random();
-        // Заполняем отображение чисел и букв
-        String alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-        for (int i = 0; i < 26; i++) {
-            char letter = alphabet.charAt(i);
-            //System.out.println(letter);
-            numberToLetterMap.put(i, letter);
-           // System.out.println(numberToLetterMap);
-        }
-
-        // Пример использования: получение буквы, соответствующей числу
-        int number = r.nextInt(26); // Пример числа (0-25)
-        char letter = numberToLetterMap.get(number);
-        System.out.println("Число " + number + " соответствует букве " + letter);
-
-
+        Function<String, Character> g = (str) -> findCharInString(str);
 
 //          Вариант c Supplier
 
@@ -88,8 +50,35 @@ public class Task_2_Lambda {
         String randomString = randomStringSupplier.get();
         System.out.println("Сгенерированная строка: " + randomString);
 
-}
+        System.out.println(g.apply(randomStringSupplier.get()));
+
+    }
+
+    public static Character findCharInString(String str1) {
+        System.out.println(str1);
+        Map<Character, Integer> symbols = new HashMap<>();
+        char charPop = 0;
+        int maxNumber = 0;
+        for (int i = 0; i < str1.length(); i++) {
+            if (!symbols.containsKey(str1.charAt(i))) {
+                symbols.put(str1.charAt(i), 1);
+            }else {
+                symbols.put(str1.charAt(i), symbols.get(str1.charAt(i)) + 1);
+            }
         }
+        System.out.println(symbols);
+
+        for (Map.Entry<Character, Integer> entry : symbols.entrySet()) {
+            if (entry.getValue() > maxNumber){
+                maxNumber = entry.getValue();
+                charPop = entry.getKey();
+            }
+        }
+        return charPop;
+
+    }
+
+}
 
 
 
