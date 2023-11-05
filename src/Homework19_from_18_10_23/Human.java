@@ -19,10 +19,15 @@ package Homework19_from_18_10_23;
 //Напишите ответы на экран
 public class Human {
    private String name;
+   private Human mather;
+   private Human father;
    private int age;
 
-   public Human(String name, int age) {
+   public Human(String name, Human mather, Human father, int age) {
       this.name = name;
+      this.mather = mather;
+      this.father = father;
+      this.age = age;
    }
 
    public String getName() {
@@ -33,10 +38,36 @@ public class Human {
       this.name = name;
    }
 
+   public Human getMather() {
+      return mather;
+   }
+
+   public void setMather(Human mather) {
+      this.mather = mather;
+   }
+
+   public Human getFather() {
+      return father;
+   }
+
+   public void setFather(Human father) {
+      this.father = father;
+   }
+
+   public int getAge() {
+      return age;
+   }
+
+   public void setAge(int age) {
+      this.age = age;
+   }
+
    @Override
    public String toString() {
       return "Human{" +
               "name='" + name + '\'' +
+              ", mather=" + mather +
+              ", father=" + father +
               ", age=" + age +
               '}';
    }
