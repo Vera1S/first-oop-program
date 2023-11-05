@@ -4,19 +4,20 @@ package Lesson19_18_10_23;
 import java.awt.print.Book;
 import java.util.List;
 import java.util.Objects;
+import java.util.Set;
 
 public class Student {
     private String name;
-    private List<Book> books;
-    public Student(String name, List<Book> books) {
+    private Set<Book> books;
+    public Student(String name, Set<Book> books) {
         this.name = name;
         this.books = books;
     }
 
     public boolean checkOverdueBooks() {
         long count = books.stream()
-                .filter(Objects::nonNull)
-               // .filter(book -> book.getStatus() == BookStatus.OVERDUE)
+                .filter(Objects::nonNull)                   //покажи студента у которого имя не 0
+                //.filter(book -> book.getStatus() == BookStatus.OVERDUE)
                 .count();
 
         return count > 0;
@@ -30,11 +31,11 @@ public class Student {
         this.name = name;
     }
 
-    public List<Book> getBooks() {
+    public Set<Book> getBooks() {
         return books;
     }
 
-    public void setBooks(List<Book> books) {
+    public void setBooks(Set<Book> books) {
         this.books = books;
     }
 

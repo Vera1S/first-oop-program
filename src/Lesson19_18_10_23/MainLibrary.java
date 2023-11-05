@@ -29,8 +29,8 @@ public class MainLibrary {
 //        //Имена студентов, у которых имя больше 5 символов
 //
 //        List<String> result = students.stream()
-//                .map(Student::getName)
-//                .filter(Objects::nonNull)
+//                .map(Student::getName) //сначало надо писать, так: (student -> student.getName()) студент дай/покажи свое имя
+//                .filter(Objects::nonNull)   // сначало надо писать, так: (name -> name != null)
 //                .filter(name -> name.length() > 5)
 //                .toList();
 //
@@ -39,10 +39,10 @@ public class MainLibrary {
 //        //Имена студентов, у которых больше одной книги
 //
 //        long count = students.stream()
-//                .filter(student -> student.getBooks() != null)
-//                .filter(student -> student.getBooks().size() > 1)
-//                .map(Student::getName)
-//                .count();
+//                .filter(student -> student.getBooks() != null)     //покажи студента у которых есть книги не равно 0
+//                .filter(student -> student.getBooks().size() > 1) //если кол-во больше 1, студент отдай книгу
+//                .map(Student::getName)                            //студент покажи имя
+//                .count();                                         //количество этих людей
 //
 //        System.out.println(count);
 //
@@ -52,18 +52,18 @@ public class MainLibrary {
 ////        List<String> names = students.stream()
 ////                .filter(student -> student.getBooks() != null)
 ////                .filter(student -> student.getBooks().size() > 1)
-////                .filter(Student::checkOverdueBooks)
+////                .filter(Student::checkOverdueBooks) // этот метод подсчитывает просроченные книги
 ////                .map(Student::getName)
-////                .filter(Objects::nonNull)
+////                .filter(Objects::nonNull)              //покажи студента у которого имя не 0
 ////                .toList();
 ////
 ////        System.out.println(names);
 //
-//        //найти людей, у кого просрочены книжки
+//        //найти людей, у кого просрочены книжки (этот метод находится в классе студент)
 //        //                .filter(student -> {
-//        //                    Set<Book> books = student.getBooks();
+//        //                    Set<Book> books = student.getBooks();  //студент покажи книги
 //        //                    for (Book book : books) {
-//        //                        if (book.getStatus() == BookStatus.OVERDUE) {
+//        //                        if (book.getStatus() == BookStatus.OVERDUE) {  //если книги с просроченным сроком покажи мне
 //        //                            return true;
 //        //                        }
 //        //                    }
@@ -77,9 +77,9 @@ public class MainLibrary {
 //        //найти все просроченные книги, длина названия которых больше 8 букв
 //
 //        List<Book> books = students.stream()
-//                .map(Student::getBooks)
+//                .map(Student::getBooks)  //это Set книг коллекция, множество книг
 //                .filter(Objects::nonNull)
-//                .flatMap(books1 -> books1.stream())
+//                .flatMap(books1 -> books1.stream())  // эта строка берет из коллекции множества книг, в отдельные книги
 //                .filter(Objects::nonNull)
 //              //  .filter(book -> book.getStatus() == BookStatus.OVERDUE)
 //                //.filter(book -> book.getName() != null)
@@ -89,9 +89,9 @@ public class MainLibrary {
 //        //найти все зарезервированные книги, на людей с именем на букву A
 //
 //        List<Book> answer = students.stream()
-//                .filter(student -> student.getName() != null && student.getName().startsWith("A"))
+//                .filter(student -> student.getName() != null && student.getName().startsWith("A")) //стартует с буквы А
 //                .map(Student::getBooks)
-//                .flatMap(Collection::stream)
+//                .flatMap(Collection::stream) //сначало надо писать, так: (books -> books.stream())
 //             //  .filter(book -> book != null && book.getStatus() != null && book.getStatus() == BookStatus.RESERVED)
 //                .toList();
 //
@@ -102,8 +102,8 @@ public class MainLibrary {
 //        List<Book> list = students.stream()
 //                .filter(student -> student != null && student.getBooks() != null)
 //                .map(Student::getBooks)
-//                .flatMap(Collection::stream)
-//               // .filter(book -> book != null && books.getId() > 0 && books.getId() % 2 == 0)
+//                .flatMap(Collection::stream)  //сначало надо писать, так: (books -> books.stream())
+//                .filter(book -> book != null && books.getId() > 0 && books.getId() % 2 == 0)
 //                .toList();
 //
 //        System.out.println(list);
@@ -112,11 +112,12 @@ public class MainLibrary {
 
         //количество ключей в мапе, которые начинаются на А
 //        long count = hashMap.entrySet().stream()
-//                .filter(x -> x.getKey().startsWith("A"))
+//                .filter(x -> x.getKey().startsWith("A")) //получили ключ, со стартовой буквой "А"
 //                .count();
 //
-//        hashMap.keySet();
-//        hashMap.values();
+//        hashMap.keySet(); //из Мар даст только ключи в виде сета, в виде множества, а потом применить стрим (.stream())
+//        hashMap.values();  //отдаст коллекцию из знчений, тоже можно применить стрим (.stream())
+//        hashMap.entrySet(); // отдаст специальный объект, который Entry - ячейка, в которой можно получить значение или ключ
 
 
         //students.stream
