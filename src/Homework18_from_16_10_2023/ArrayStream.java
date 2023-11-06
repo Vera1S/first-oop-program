@@ -2,6 +2,7 @@ package Homework18_from_16_10_2023;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.Random;
 // Создать ArrayList. заполните его числами от 0 до 100
 
@@ -22,22 +23,14 @@ public class ArrayStream {
         }
         System.out.println(number);
 
-        long count = number.stream()
+        Optional<Integer> count = number.stream()
                  .map((x) -> x / 2)
                  .filter((x) -> x > 25)
                  .map((x) -> x - 30)
                  .sorted()
                  .limit(5)
-                 .count();
-
-        System.out.println(count);
-
-        // Не понимаю, почему не посчитал сумму?
-        // Почему-то я за вами повторяю, а у меня постоянно выходят ошибки,
-        // что я не так делаю, можете мне подсказать?
-        // Я уже устала от того, что не один код не получается у меня.((
-
-
+                 .reduce(Integer::sum);  //.reduce((x, y) -> x +y);
+        System.out.println(count.get());
 
     }
 }
