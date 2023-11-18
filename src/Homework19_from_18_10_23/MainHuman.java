@@ -36,6 +36,7 @@ public class MainHuman {
         List<String> nameMather = familyPeople.stream()
                 .filter(human -> human.getAge() > 25)
                 .filter(Objects::nonNull)                         // сначало написала, так: (name -> name != null)
+                .filter(human -> mother.getName() != null)
                 .map(human -> human.getMather().getName())
                 .collect(toList());
 

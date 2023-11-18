@@ -30,6 +30,7 @@ public class ArrayStream {
                  .sorted()
                  .limit(5)
                  .reduce(Integer::sum);  //.reduce((x, y) -> x +y);
+
         System.out.println(count.get());
 
     }
