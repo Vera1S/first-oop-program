@@ -12,9 +12,12 @@ public class PeopleGenerator {
     public static void main(String[] args) throws FileNotFoundException {
         File firstFile = new File("name_Female.txt");
         File secondFile = new File("nameMale.txt");
-        File TtirdFile = new File("PensionFund.txt");
+        File tirdFile = new File("PensionFund.txt");
 
         FileReader fileReader = new FileReader(firstFile);
+        FileReader fileReaderNameMale = new FileReader(secondFile);
+        FileReader fileReaderPensionFund = new FileReader(tirdFile);
+
         BufferedReader bufferedReader = new BufferedReader(fileReader);
         List<String> people = bufferedReader.lines()
                 .toList();
