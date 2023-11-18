@@ -14,11 +14,13 @@ public class PeopleGenerator {
         File secondFile = new File("nameMale.txt");
         File tirdFile = new File("PensionFund.txt");
 
-        FileReader fileReader = new FileReader(firstFile);
+        FileReader fileReaderNameFemale = new FileReader(firstFile);
         FileReader fileReaderNameMale = new FileReader(secondFile);
         FileReader fileReaderPensionFund = new FileReader(tirdFile);
 
-        BufferedReader bufferedReader = new BufferedReader(fileReader);
+        BufferedReader bufferedReader = new BufferedReader(fileReaderNameFemale);
+        BufferedReader bufferedReaderNameMale = new BufferedReader(fileReaderNameMale);
+        BufferedReader bufferedReaderPensionFund = new BufferedReader(fileReaderPensionFund);
         List<String> people = bufferedReader.lines()
                 .toList();
     }
